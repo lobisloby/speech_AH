@@ -1,22 +1,25 @@
-"use client";
-import { Button } from "@/components/ui/button";
-import { toast } from "sonner";
+import { OrganizationSwitcher, UserButton } from "@clerk/nextjs";
 
 export default function Home() {
   return (
-    <Button
-      onClick={() =>
-        toast("Event has been created", {
-          description: "Sunday, December 03, 2023 at 9:00 AM",
-          action: {
-            label: "Undo",
-            onClick: () => console.log("Undo"),
-          },
-        })
-      }
-      variant="default"
+    <div
+      className="
+        flex min-h-screen flex-col items-center justify-center gap-4 bg-background
+      "
     >
-      Click me
-    </Button>
-  );
+      <h1 
+        className="flex items-center gap-4"
+      >
+        Welcome to Resonance
+      </h1>
+      <div
+        className="
+          flex items-center gap-4 
+        "
+      >
+        <OrganizationSwitcher/>
+        <UserButton/>
+      </div>
+    </div>
+  )
 }
